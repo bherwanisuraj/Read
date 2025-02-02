@@ -35,6 +35,7 @@
         }
         #output {
             margin-top: 20px;
+            white-space: pre-line; /* Preserve line breaks */
         }
     </style>
 </head>
@@ -74,7 +75,8 @@
             paragraph.textContent = text;
             output.prepend(paragraph);
             localStorage.setItem('savedText', text);
-            clearInput()
+            window.scrollTo(0, 0); // Scroll to top
+            clearInput();
         }
 
         function clearText() {
